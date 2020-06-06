@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: web-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            env: production
+    template:
+        metadata:
+            name: web-deployment-pod
+            labels:
+                env: production
+        spec:
+            containers:
+            - name: web-deployment-container
+              image: gurpreets0610/test-website:v2
+                
